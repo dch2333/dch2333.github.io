@@ -4,11 +4,30 @@
   
     
     <entry>
+      <title>追赶法求解五对角方程组</title>
+      <link href="/2019/06/09/%E8%BF%BD%E8%B5%B6%E6%B3%95%E6%B1%82%E8%A7%A3%E4%BA%94%E5%AF%B9%E8%A7%92%E6%96%B9%E7%A8%8B%E7%BB%84/"/>
+      <url>/2019/06/09/%E8%BF%BD%E8%B5%B6%E6%B3%95%E6%B1%82%E8%A7%A3%E4%BA%94%E5%AF%B9%E8%A7%92%E6%96%B9%E7%A8%8B%E7%BB%84/</url>
+      
+        <content type="html"><![CDATA[<p>由追赶法求解三对角方程组的思想，推导出求解五对角方程组的追赶法，计算速度快，占用内存小</p><a id="more"></a>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 算法 Matlab </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>helloWorld</title>
       <link href="/2019/06/08/helloWorld/"/>
       <url>/2019/06/08/helloWorld/</url>
       
-        <content type="html"><![CDATA[<p>zhaiyao</p><a id="more"></a><p>zhengwenW</p>]]></content>
+        <content type="html"><![CDATA[<p>zhaiyao</p><a id="more"></a><p>zhengwenW</p><h2 id="123"><a href="#123" class="headerlink" title="123"></a>123</h2><p>$ 1 $<br>This expression<br>$\sqrt{3x-1}+(1+x)^2$ is an example of a $\LaTeX$ inline equation.he Lorenz Equations:<br>$$\begin{aligned}\dot{x} &amp; = \sigma(y-x) \\dot{y} &amp; = \rho x - y - xz \\dot{z} &amp; = -\beta z + xy\end{aligned}$$</p>]]></content>
       
       
       
