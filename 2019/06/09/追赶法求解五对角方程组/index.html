@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="由追赶法求解三对角方程组的思想，推导出求解五对角方程组的追赶法，计算速度快，占用内存小">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-10T09:51:54.148Z">
+<meta property="og:updated_time" content="2019-06-10T10:07:04.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="追赶法求解五对角方程组">
 <meta name="twitter:description" content="由追赶法求解三对角方程组的思想，推导出求解五对角方程组的追赶法，计算速度快，占用内存小">
@@ -310,16 +310,16 @@
         <p>由追赶法求解三对角方程组的思想，推导出求解五对角方程组的追赶法，计算速度快，占用内存小</p>
 <a id="more"></a>
 
-<h1 id="算法推导"><a href="#算法推导" class="headerlink" title="算法推导"></a>算法推导</h1><h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><p>$$<br>\begin{pmatrix}<br>    c_1 &amp; d_1 &amp; e_1 \<br>    b_2 &amp; c_2 &amp; d_2 &amp; e_2 \<br>    a_3 &amp; b_3 &amp; c_3 &amp; d_3 &amp; e_3 \<br>    &amp; \ddots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \ddots \<br>    &amp; &amp; a_{n-2} &amp; b_{n-2} &amp; c_{n-2} &amp; d_{n-2} &amp; e_{n-2} \<br>    &amp; &amp; &amp; a_{n-1} &amp; b_{n-1} &amp; c_{n-1} &amp; d_{n-1} \<br>    &amp; &amp; &amp; &amp; a_n &amp; b_n &amp; c_n \<br>\end{pmatrix}<br>*
-\begin{pmatrix}<br>    x_1 \<br>    x_2 \<br>    x_3 \<br>    \vdots \<br>    x_{n-2} \<br>    x_{n-1} \<br>    x_n \<br>\end{pmatrix}<br>=
-\begin{pmatrix}<br>    f_1 \<br>    f_2 \<br>    f_3 \<br>    \vdots \<br>    f_{n-2} \<br>    f_{n-1} \<br>    f_n \<br>\end{pmatrix}<br>$$<br>记为Ax=f，求解x</p>
+<h1 id="算法推导"><a href="#算法推导" class="headerlink" title="算法推导"></a>算法推导</h1><h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><p>$$<br>\begin{pmatrix}<br>    c_1 &amp; d_1 &amp; e_1 \<br>    b_2 &amp; c_2 &amp; d_2 &amp; e_2 \<br>    a_3 &amp; b_3 &amp; c_3 &amp; d_3 &amp; e_3 \<br>    &amp; \ddots &amp; \ddots &amp; \ddots &amp; \ddots &amp; \ddots \<br>    &amp; &amp; a_{n-2} &amp; b_{n-2} &amp; c_{n-2} &amp; d_{n-2} &amp; e_{n-2} \<br>    &amp; &amp; &amp; a_{n-1} &amp; b_{n-1} &amp; c_{n-1} &amp; d_{n-1} \<br>    &amp; &amp; &amp; &amp; a_n &amp; b_n &amp; c_n<br>\end{pmatrix}<br>*
+\begin{pmatrix}<br>    x_1 \<br>    x_2 \<br>    x_3 \<br>    \vdots \<br>    x_{n-2} \<br>    x_{n-1} \<br>    x_n<br>\end{pmatrix}<br>=
+\begin{pmatrix}<br>    f_1 \<br>    f_2 \<br>    f_3 \<br>    \vdots \<br>    f_{n-2} \<br>    f_{n-1} \<br>    f_n<br>\end{pmatrix}<br>$$<br>记为Ax=f，求解x</p>
 <h2 id="LU分解"><a href="#LU分解" class="headerlink" title="LU分解"></a>LU分解</h2><p>A=LU，其中<br>$$<br>L=<br>\begin{pmatrix}<br>    m_1 \<br>    n_2 &amp; m_2 \<br>    a_3 &amp; n_3 &amp; m_3 \<br>    &amp; \ddots &amp; \ddots &amp; \ddots \<br>    &amp; &amp; a_n &amp; n_n &amp; m_n<br>\end{pmatrix}<br>$$</p>
-<p>$$<br>U=<br>\begin{pmatrix}<br>    1 &amp; p_1 &amp; q_1 \<br>    &amp; 1 &amp; p_2 &amp; q_2 \<br>    &amp; &amp; \ddots &amp; \ddots &amp; \ddots \<br>    &amp; &amp; &amp; 1 &amp; p_{n-2} &amp; q_{n-2} \<br>    &amp; &amp; &amp; &amp; 1 &amp; p_{n-1} \<br>    &amp; &amp; &amp; &amp; &amp; 1 \<br>\end{pmatrix}<br>$$</p>
+<p>$$<br>U=<br>\begin{pmatrix}<br>    1 &amp; p_1 &amp; q_1 \<br>    &amp; 1 &amp; p_2 &amp; q_2 \<br>    &amp; &amp; \ddots &amp; \ddots &amp; \ddots \<br>    &amp; &amp; &amp; 1 &amp; p_{n-2} &amp; q_{n-2} \<br>    &amp; &amp; &amp; &amp; 1 &amp; p_{n-1} \<br>    &amp; &amp; &amp; &amp; &amp; 1<br>\end{pmatrix}<br>$$</p>
 <p>L中的$a_i$等于A中的$a_i$，</p>
-<p>且通过<br>$$<br>\begin{cases}<br>    m_1 = c_1 \<br>    p_1 = \frac{d_1}{m_1} \<br>    n_2 = b_2 \<br>    m_2 = c_2 - n_2 p_1 \<br>    n_i = b_i - a_i p_{i-2}, i=3,4,…,n \<br>    m_i = c_i - a_i q_{i-2} - n_i p_{i-1}, i=3,4,…,n \<br>    q_i = \frac{e_i}{m_i}, i=1,2,…,n-2 \<br>    p_i = \frac{d_i - n_i q_{i-1}}{m_i}, i=2,3,…,n-1 \<br>\end{cases}<br>$$</p>
+<p>且通过<br>$$<br>\begin{cases}<br>    m_1 = c_1 \<br>    p_1 = \frac{d_1}{m_1} \<br>    n_2 = b_2 \<br>    m_2 = c_2 - n_2 p_1 \<br>    n_i = b_i - a_i p_{i-2}, i=3,4,…,n \<br>    m_i = c_i - a_i q_{i-2} - n_i p_{i-1}, i=3,4,…,n \<br>    q_i = \frac{e_i}{m_i}, i=1,2,…,n-2 \<br>    p_i = \frac{d_i - n_i q_{i-1}}{m_i}, i=2,3,…,n-1<br>\end{cases}<br>$$</p>
 <p>计算m、n、p、q</p>
-<h2 id="追"><a href="#追" class="headerlink" title="追"></a>追</h2><p>Ly=f，求y：<br>$$<br>\begin{cases}<br>y_1 = \frac{f_1}{m_1} \<br>y_2 = \frac{f_2 - n_2 y_1}{m_2} \<br>y_i = \frac{f_i - a_i y_{i-2} - n_i y_{i-1}}{m_i}, i=3,4,…,n \<br>\end{cases}<br>$$</p>
-<h2 id="赶"><a href="#赶" class="headerlink" title="赶"></a>赶</h2><p>Ux=y，求x：<br>$$<br>\begin{cases}<br>x_n = y_n \<br>x_{n-1} = y_{n-1} - p_{n-1} x_n \<br>x_i = y_i - q_i x_{i+2} - p_i x_{i+1}, i=n-2,n-3,…,1 \<br>\end{cases}<br>$$</p>
+<h2 id="追"><a href="#追" class="headerlink" title="追"></a>追</h2><p>Ly=f，求y：<br>$$<br>\begin{cases}<br>y_1 = \frac{f_1}{m_1} \<br>y_2 = \frac{f_2 - n_2 y_1}{m_2} \<br>y_i = \frac{f_i - a_i y_{i-2} - n_i y_{i-1}}{m_i}, i=3,4,…,n<br>\end{cases}<br>$$</p>
+<h2 id="赶"><a href="#赶" class="headerlink" title="赶"></a>赶</h2><p>Ux=y，求x：<br>$$<br>\begin{cases}<br>x_n = y_n \<br>x_{n-1} = y_{n-1} - p_{n-1} x_n \<br>x_i = y_i - q_i x_{i+2} - p_i x_{i+1}, i=n-2,n-3,…,1<br>\end{cases}<br>$$</p>
 <h1 id="复杂度估计"><a href="#复杂度估计" class="headerlink" title="复杂度估计"></a>复杂度估计</h1><p>LU分解部分需要计算6n个乘法和4n个加法</p>
 <p>追的过程需要计算3n个乘法和2n个加法</p>
 <p>赶的部分需要计算2n个乘法和2n个加法</p>
@@ -407,7 +407,7 @@
         <p><span>本文标题:</span><a href="/2019/06/09/追赶法求解五对角方程组/">追赶法求解五对角方程组</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">DCH</a></p>
         <p><span>发布时间:</span>2019-06-09, 16:31:00</p>
-        <p><span>最后更新:</span>2019-06-10, 17:51:54</p>
+        <p><span>最后更新:</span>2019-06-10, 18:07:04</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/06/09/追赶法求解五对角方程组/" title="追赶法求解五对角方程组">https://github.com/dch2333/dch2333.github.io.git/2019/06/09/追赶法求解五对角方程组/</a>
             <span class="copy-path" data-clipboard-text="原文: https://github.com/dch2333/dch2333.github.io.git/2019/06/09/追赶法求解五对角方程组/　　作者: DCH" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
