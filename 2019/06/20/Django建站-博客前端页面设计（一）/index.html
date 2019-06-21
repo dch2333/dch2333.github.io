@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ChFzAly1g480savs8nj31hc0t4hc4.jpg">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/21/ZS0anA.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/21/ZSsU8f.png">
-<meta property="og:updated_time" content="2019-06-21T11:02:44.342Z">
+<meta property="og:updated_time" content="2019-06-21T11:16:33.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django建站-博客前端页面设计（一）">
 <meta name="twitter:description" content="包括基础页面、主页和404页面。">
@@ -341,7 +341,7 @@
 <p>在body中加一张背景图，这样就是基础的base.html了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&#123;% load staticfiles %&#125;</span><br><span class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;link rel=&quot;SHORTCUT ICON&quot; href=&quot;static/images/favicon.ico&quot;/&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        /* 链接 */</span><br><span class="line">        a:link&#123;</span><br><span class="line">            color: black;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">    &#123;% block headers %&#125;&#123;% endblock headers %&#125;</span><br><span class="line">    &lt;title&gt;&#123;% block title %&#125;&#123;% endblock title %&#125;&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body style=&quot;background-image: url(/static/images/background.jpg);&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;sidebar&quot;&gt;</span><br><span class="line">        &lt;img class=&quot;avatar&quot; src=&quot;/static/images/avatar.jpg&quot;&gt;</span><br><span class="line">        &lt;h4&gt;&lt;a href=&quot;/&quot;&gt;Homepage&lt;/a&gt;&lt;/h4&gt;</span><br><span class="line">        &lt;h4&gt;&lt;a href=&quot;projects&quot;&gt;Projects&lt;/a&gt;&lt;/h4&gt;</span><br><span class="line">        &lt;h4&gt;&lt;a href=&quot;tags&quot;&gt;Tags&lt;/a&gt;&lt;/h4&gt;</span><br><span class="line">        &lt;h4&gt;&lt;a href=&quot;aboutme&quot;&gt;About me&lt;/a&gt;&lt;/h4&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &#123;% block container %&#125;</span><br><span class="line">        &#123;% endblock container %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
-<p>这句<link rel="SHORTCUT ICON" href="static/images/favicon.ico">是用来加载图标的。</p>
+<p>这句<code>&lt;link rel=&quot;SHORTCUT ICON&quot; href=&quot;static/images/favicon.ico&quot;/&gt;</code>是用来加载图标的。</p>
 <p><img src="http://ww1.sinaimg.cn/large/006ChFzAly1g480savs8nj31hc0t4hc4.jpg" alt></p>
 <h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>在urls.py中匹配参数：</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">path(<span class="string">''</span>, homepage1),</span><br><span class="line">path(<span class="string">'&lt;int:page&gt;'</span>, homepage),</span><br></pre></td></tr></table></figure>
@@ -378,7 +378,7 @@
         <p><span>本文标题:</span><a href="/2019/06/20/Django建站-博客前端页面设计（一）/">Django建站-博客前端页面设计（一）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">DCH</a></p>
         <p><span>发布时间:</span>2019-06-20, 16:27:46</p>
-        <p><span>最后更新:</span>2019-06-21, 19:02:44</p>
+        <p><span>最后更新:</span>2019-06-21, 19:16:33</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/06/20/Django建站-博客前端页面设计（一）/" title="Django建站-博客前端页面设计（一）">https://github.com/dch2333/dch2333.github.io.git/2019/06/20/Django建站-博客前端页面设计（一）/</a>
             <span class="copy-path" data-clipboard-text="原文: https://github.com/dch2333/dch2333.github.io.git/2019/06/20/Django建站-博客前端页面设计（一）/　　作者: DCH" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
