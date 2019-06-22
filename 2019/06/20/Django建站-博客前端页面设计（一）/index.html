@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ChFzAly1g480savs8nj31hc0t4hc4.jpg">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/21/ZS0anA.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/06/21/ZSsU8f.png">
-<meta property="og:updated_time" content="2019-06-22T13:55:44.682Z">
+<meta property="og:updated_time" content="2019-06-22T14:49:40.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django建站-博客前端页面设计（一）">
 <meta name="twitter:description" content="包括基础页面、主页和404页面。">
@@ -329,10 +329,10 @@
 <li>自我介绍页：包含自我介绍。参数：无</li>
 </ul>
 <h2 id="基础样式页"><a href="#基础样式页" class="headerlink" title="基础样式页"></a>基础样式页</h2><p>首先需要一个侧边栏：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.sidebar</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">16%</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">0%</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(150,150,150,0.5);</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.sidebar</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">16%</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">0%</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(150,150,150,0.5);</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>和内容块：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">83%</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">16%</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(200,200,200,0.5);</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">83%</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">16%</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(200,200,200,0.5);</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>注意内容块和侧边栏加起来的宽度为99%，这样会在页面两边有两条没有覆盖到的部分，如果为100%的话，就只有左边有了。</p>
 <p>然后是头像样式：</p>
@@ -384,7 +384,7 @@
         <p><span>本文标题:</span><a href="/2019/06/20/Django建站-博客前端页面设计（一）/">Django建站-博客前端页面设计（一）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">DCH</a></p>
         <p><span>发布时间:</span>2019-06-20, 16:27:46</p>
-        <p><span>最后更新:</span>2019-06-22, 21:55:44</p>
+        <p><span>最后更新:</span>2019-06-22, 22:49:40</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/06/20/Django建站-博客前端页面设计（一）/" title="Django建站-博客前端页面设计（一）">https://github.com/dch2333/dch2333.github.io.git/2019/06/20/Django建站-博客前端页面设计（一）/</a>
             <span class="copy-path" data-clipboard-text="原文: https://github.com/dch2333/dch2333.github.io.git/2019/06/20/Django建站-博客前端页面设计（一）/　　作者: DCH" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
