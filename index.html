@@ -838,95 +838,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <a id="more"></a>
-
-<h1 id="一-标题"><a href="#一-标题" class="headerlink" title="一.标题"></a>一.标题</h1><p>用#号，#越多标题级别越低，上面“一.标题”我就用的是一级标题<br>例如：</p>
-<p># 123</p>
-<p>## 123</p>
-<p>### 123</p>
-<p>#### 123</p>
-<p>##### 123</p>
-<p>###### 123</p>
-<p>输出：</p>
-<h1 id="123"><a href="#123" class="headerlink" title="123"></a>123</h1><h2 id="123-1"><a href="#123-1" class="headerlink" title="123"></a>123</h2><h3 id="123-2"><a href="#123-2" class="headerlink" title="123"></a>123</h3><h4 id="123-3"><a href="#123-3" class="headerlink" title="123"></a>123</h4><h5 id="123-4"><a href="#123-4" class="headerlink" title="123"></a>123</h5><h6 id="123-5"><a href="#123-5" class="headerlink" title="123"></a>123</h6><h1 id="二-引用"><a href="#二-引用" class="headerlink" title="二.引用"></a>二.引用</h1><p>当你需要引用别人说的话的时候，一般要用这种格式<br>在’&gt;’后加一个空格再加你要引用的话<br>例如：<br>    &gt; 就像这样</p>
-<blockquote>
-<p>就像这样</p>
-</blockquote>
-<h1 id="三-列表"><a href="#三-列表" class="headerlink" title="三.列表"></a>三.列表</h1><p>文字前加 * 号，例如：</p>
-<p><code>* 1</code></p>
-<p><code>* 2</code></p>
-<p><code>* 3</code></p>
-<ul>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-</ul>
-<h1 id="四-表格"><a href="#四-表格" class="headerlink" title="四.表格"></a>四.表格</h1><p>`</p>
-<p>| Item      |    Value | Qty  |</p>
-<p>| :——– | ——–:| :–: |</p>
-<p>| Computer  | 1600 USD |  5   |</p>
-<p>| Phone     |   12 USD |  12  |</p>
-<p>| Pipe      |    1 USD | 234  |</p>
-<p>`</p>
-<table>
-<thead>
-<tr>
-<th align="left">Item</th>
-<th align="right">Value</th>
-<th align="center">Qty</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">Computer</td>
-<td align="right">1600 USD</td>
-<td align="center">5</td>
-</tr>
-<tr>
-<td align="left">Phone</td>
-<td align="right">12 USD</td>
-<td align="center">12</td>
-</tr>
-<tr>
-<td align="left">Pipe</td>
-<td align="right">1 USD</td>
-<td align="center">234</td>
-</tr>
-</tbody></table>
-<h1 id="五-代码块"><a href="#五-代码块" class="headerlink" title="五.代码块"></a>五.代码块</h1><p>用三个 ` 围起来或者直接缩进4个空格</p>
-<p>例：</p>
-<p>```<br>include&lt;iostream&gt;</p>
-<p>using namespace std;<br>```</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br></pre></td></tr></table></figure>
-
-<h1 id="六-分割线"><a href="#六-分割线" class="headerlink" title="六.分割线"></a>六.分割线</h1><p>三个<code>*</code>号或三个<code>-</code>号，例如：</p>
-<hr>
-<h1 id="七-图片-amp-链接"><a href="#七-图片-amp-链接" class="headerlink" title="七.图片&amp;链接"></a>七.图片&amp;链接</h1><p>插入图片：</p>
-<blockquote>
-<p>![]()</p>
-</blockquote>
-<p>不举例了，在小括号里放图片链接就行==</p>
-<p>然后是插入链接(以百度为例)：</p>
-<blockquote>
-<p>[百度一下](<a href="https://www.baidu.com/" target="_blank" rel="noopener">https://www.baidu.com/</a>)</p>
-</blockquote>
-<p>输出就是：<a href="https://www.baidu.com/" target="_blank" rel="noopener">百度一下</a></p>
-<h1 id="八-粗体-amp-斜体"><a href="#八-粗体-amp-斜体" class="headerlink" title="八.粗体&amp;斜体"></a>八.粗体&amp;斜体</h1><p>两个 * 包含一段文本是粗体，用一个 * 包含一段文本是斜体</p>
-<p>例如：</p>
-<p><code>**粗体**</code></p>
-<p>输出：</p>
-<p><strong>粗体</strong></p>
-<p>例如：</p>
-<p><code>*斜体*</code></p>
-<p>输出：</p>
-<p><em>斜体</em></p>
-<h1 id="九-复选框"><a href="#九-复选框" class="headerlink" title="九.复选框"></a>九.复选框</h1><p>使用 <code>- [ ]</code> 和 <code>- [x]</code> 语法可以创建复选框，实现 todo-list 等功能。例如：</p>
-<ul>
-<li><input checked disabled type="checkbox"> 已完成事项</li>
-<li><input disabled type="checkbox"> 待办事项1</li>
-<li><input disabled type="checkbox"> 待办事项2</li>
-</ul>
-<h1 id="十-使用心得"><a href="#十-使用心得" class="headerlink" title="十.使用心得"></a>十.使用心得</h1><p>1.各级标题和代码块之间一定要空行！引用和代码块也要空行！总之就是各种空行！！！  <br><br>2.代码块后面要空两行才能用标题，不然标题就会被放到代码块里，不知道为啥？—？  <br><br>3.用 ` 围起来的是标签  like this  :<code>标签</code></p>
-
+              <p>常用MarkDown语法</p>
+          
       
     </div>
     
@@ -939,6 +852,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MarkDown/">MarkDown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2019/06/08/helloWorld/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
