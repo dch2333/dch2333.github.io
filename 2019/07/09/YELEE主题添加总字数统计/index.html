@@ -15,14 +15,18 @@
 
 
 
+<meta name="description" content="网上全是给单篇文章加字数统计和阅读时间的，没有给站点添加总字数统计和总文章数统计的教程，索性写上一篇。">
 <meta name="keywords" content="DCH dch 杜晨皓">
-<meta property="og:type" content="website">
-<meta property="og:title" content="DCH BLOG">
-<meta property="og:url" content="https://github.com/dch2333/dch2333.github.io.git/tags/笔记/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="YELEE主题添加总字数统计">
+<meta property="og:url" content="https://github.com/dch2333/dch2333.github.io.git/2019/07/09/YELEE主题添加总字数统计/index.html">
 <meta property="og:site_name" content="DCH BLOG">
+<meta property="og:description" content="网上全是给单篇文章加字数统计和阅读时间的，没有给站点添加总字数统计和总文章数统计的教程，索性写上一篇。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-09T08:07:59.758Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DCH BLOG">
+<meta name="twitter:title" content="YELEE主题添加总字数统计">
+<meta name="twitter:description" content="网上全是给单篇文章加字数统计和阅读时间的，没有给站点添加总字数统计和总文章数统计的教程，索性写上一篇。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -54,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: 笔记 | DCH BLOG</title>
+<title>YELEE主题添加总字数统计 | DCH BLOG</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -64,9 +68,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -275,126 +279,150 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-YELEE主题添加总字数统计" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2019/07/09/YELEE主题添加总字数统计/" class="article-date">
+      <time datetime="2019-07-09T07:39:48.000Z" itemprop="datePublished">2019-07-09</time>
+</a>
+
+
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      YELEE主题添加总字数统计
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2019/06/24/Win10美化笔记/" class="archive-article-date">
-      <time datetime="2019-06-24T12:40:44.000Z" itemprop="datePublished">06-24</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/24/Win10美化笔记/">Win10美化笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/随笔/">随笔</a>
+        <p>网上全是给单篇文章加字数统计和阅读时间的，没有给站点添加总字数统计和总文章数统计的教程，索性写上一篇。</p>
+<a id="more"></a>
+
+<h2 id="hexo-wordcount包"><a href="#hexo-wordcount包" class="headerlink" title="hexo-wordcount包"></a>hexo-wordcount包</h2><p>先装包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure>
+
+<p>这个包里不包含统计总文章数的方法</p>
+<p>所以要在其源码中添加一个统计站点总文章数的函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo.extend.helper.register(&apos;totalarticle&apos;, function (site) &#123;</span><br><span class="line">  return site.posts.length;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="在侧边栏中展示出来"><a href="#在侧边栏中展示出来" class="headerlink" title="在侧边栏中展示出来"></a>在侧边栏中展示出来</h2><p>打开/layout/_partial/left-col.ejs文件</p>
+<p>在第80行左右也就是类<code>header-nav</code>的列表ul中添加代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;字数统计：&lt;/li&gt;</span><br><span class="line">&lt;li&gt;共有文章&lt;%= totalarticle(site) %&gt;篇&lt;/li&gt;</span><br><span class="line">&lt;li&gt;总计&lt;%= totalcount(site) %&gt;字&lt;/li&gt;</span><br></pre></td></tr></table></figure>
+
+<p>视情况在其前后添加空行。</p>
+<p>加b标签加粗一下好像比较好看。</p>
+
+      
     </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/">Windows</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/美化/">美化</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2019/06/09/MathJax中的公式语法/" class="archive-article-date">
-      <time datetime="2019-06-09T15:17:03.000Z" itemprop="datePublished">06-09</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/09/MathJax中的公式语法/">MathJax中的公式语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MarkDown/">MarkDown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/07/09/YELEE主题添加总字数统计/">YELEE主题添加总字数统计</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">DCH</a></p>
+        <p><span>发布时间:</span>2019-07-09, 15:39:48</p>
+        <p><span>最后更新:</span>2019-07-09, 16:07:59</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/09/YELEE主题添加总字数统计/" title="YELEE主题添加总字数统计">https://github.com/dch2333/dch2333.github.io.git/2019/07/09/YELEE主题添加总字数统计/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://github.com/dch2333/dch2333.github.io.git/2019/07/09/YELEE主题添加总字数统计/　　作者: DCH" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2019/07/08/Chrome扩展开发/">
+                    Chrome浏览器扩展开发
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-wordcount包"><span class="toc-number">1.</span> <span class="toc-text">hexo-wordcount包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在侧边栏中展示出来"><span class="toc-number">2.</span> <span class="toc-text">在侧边栏中展示出来</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2019/06/08/helloWorld/" class="archive-article-date">
-      <time datetime="2019-06-08T12:33:09.000Z" itemprop="datePublished">06-08</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/08/helloWorld/">MarkDown语法</a>
-    </h1>
-  
 
-        <div class="article-info info-on-archive">
-          
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MarkDown/">MarkDown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2019/07/08/Chrome扩展开发/" title="下一篇: Chrome浏览器扩展开发">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/07/09/YELEE主题添加总字数统计/">YELEE主题添加总字数统计</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/08/Chrome扩展开发/">Chrome浏览器扩展开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/24/Win10美化笔记/">Win10美化笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/22/Django建站-博客前端页面设计（三）/">Django建站-博客前端页面设计（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/Django建站-博客前端页面设计（二）/">Django建站-博客前端页面设计（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/20/Django建站-博客前端页面设计（一）/">Django建站-博客前端页面设计（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/20/Django建站-博客后台搭建/">Django建站-博客后台搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/13/C-基础与算法复杂度/">C++基础与算法复杂度</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/09/MathJax中的公式语法/">MathJax中的公式语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/09/追赶法求解五对角方程组/">追赶法求解五对角方程组</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/08/helloWorld/">MarkDown语法</a></li></ul>
 
-    
 
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
