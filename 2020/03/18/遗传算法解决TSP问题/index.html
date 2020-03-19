@@ -15,13 +15,13 @@
 
 
 
-<meta name="description" content="title: 遗传算法解决TSP问题date: 2020-03-18 20:37:10tags:  算法 C++  一个学弟问遗传算法来着，我当初高性能做的是粒子群，正好借这个机会了解一下遗传算法">
-<meta name="keywords" content="DCH dch 杜晨皓">
+<meta name="description" content="一个学弟问遗传算法来着，我当初高性能做的是粒子群，正好借这个机会了解一下遗传算法">
+<meta name="keywords" content="算法,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DCH BLOG">
+<meta property="og:title" content="遗传算法解决TSP问题">
 <meta property="og:url" content="https://github.com/dch2333/dch2333.github.io.git/2020/03/18/遗传算法解决TSP问题/index.html">
 <meta property="og:site_name" content="DCH BLOG">
-<meta property="og:description" content="title: 遗传算法解决TSP问题date: 2020-03-18 20:37:10tags:  算法 C++  一个学弟问遗传算法来着，我当初高性能做的是粒子群，正好借这个机会了解一下遗传算法">
+<meta property="og:description" content="一个学弟问遗传算法来着，我当初高性能做的是粒子群，正好借这个机会了解一下遗传算法">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=p%28x_i%29%3D%5Cfrac%7Bf%28x_i%29%7D%7B%5Csum_%7Bj%3D1%7D%5E%7BN%7Df%28x_j%29%7D">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=q_i%3D%5Csum_%7Bj%3D1%7D%5E%7Bi%7Df%28x_j%29">
@@ -30,10 +30,10 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20170116114602606?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjc1MDcwMg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ChFzAly1gczl7bgsjhj30rl0efwfa.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ChFzAly1gczl7o0blhj30rl0efdgf.jpg">
-<meta property="og:updated_time" content="2020-03-19T14:05:45.258Z">
+<meta property="og:updated_time" content="2020-03-19T14:12:55.594Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DCH BLOG">
-<meta name="twitter:description" content="title: 遗传算法解决TSP问题date: 2020-03-18 20:37:10tags:  算法 C++  一个学弟问遗传算法来着，我当初高性能做的是粒子群，正好借这个机会了解一下遗传算法">
+<meta name="twitter:title" content="遗传算法解决TSP问题">
+<meta name="twitter:description" content="一个学弟问遗传算法来着，我当初高性能做的是粒子群，正好借这个机会了解一下遗传算法">
 <meta name="twitter:image" content="https://www.zhihu.com/equation?tex=p%28x_i%29%3D%5Cfrac%7Bf%28x_i%29%7D%7B%5Csum_%7Bj%3D1%7D%5E%7BN%7Df%28x_j%29%7D">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -66,7 +66,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>DCH BLOG</title>
+<title>遗传算法解决TSP问题 | DCH BLOG</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -210,7 +210,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkDown/">MarkDown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/明日方舟/">明日方舟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/美化/">美化</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Html/">Html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkDown/">MarkDown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/明日方舟/">明日方舟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/美化/">美化</a></li></ul>
                     </div>
                 </section>
                 
@@ -290,7 +290,7 @@
   
     <div class="article-meta">
       <a href="/2020/03/18/遗传算法解决TSP问题/" class="article-date">
-      <time datetime="2020-03-18T12:37:10.110Z" itemprop="datePublished">2020-03-18</time>
+      <time datetime="2020-03-18T12:37:10.000Z" itemprop="datePublished">2020-03-18</time>
 </a>
 
 
@@ -301,15 +301,32 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      遗传算法解决TSP问题
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>title: 遗传算法解决TSP问题<br>date: 2020-03-18 20:37:10<br>tags:</p>
-<ul>
-<li>算法</li>
-<li>C++</li>
-</ul>
-<p>一个学弟问遗传算法来着，我当初高性能做的是粒子群，正好借这个机会了解一下遗传算法</p>
+        <p>一个学弟问遗传算法来着，我当初高性能做的是粒子群，正好借这个机会了解一下遗传算法</p>
 <a id="more"></a>
 
 <h2 id="1-算法流程"><a href="#1-算法流程" class="headerlink" title="1.算法流程"></a>1.算法流程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">open=&gt;start: 开始</span><br><span class="line">init=&gt;operation: 初始化种群</span><br><span class="line">check=&gt;operation: 计算个体适应度</span><br><span class="line">choose=&gt;operation: 选择</span><br><span class="line">cross=&gt;operation: 遗传</span><br><span class="line">mutate=&gt;operation: 变异</span><br><span class="line">loop=&gt;condition: 满足在终止条件？</span><br><span class="line">end=&gt;end: 结束</span><br><span class="line"></span><br><span class="line">open-&gt;init-&gt;check-&gt;choose-&gt;cross-&gt;mutate-&gt;loop</span><br><span class="line">loop(yes)-&gt;end</span><br><span class="line">loop(no)-&gt;check</span><br></pre></td></tr></table></figure>
@@ -387,12 +404,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/03/18/遗传算法解决TSP问题/"></a></p>
+        <p><span>本文标题:</span><a href="/2020/03/18/遗传算法解决TSP问题/">遗传算法解决TSP问题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">DCH</a></p>
         <p><span>发布时间:</span>2020-03-18, 20:37:10</p>
-        <p><span>最后更新:</span>2020-03-19, 22:05:45</p>
+        <p><span>最后更新:</span>2020-03-19, 22:12:55</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/03/18/遗传算法解决TSP问题/" title="">https://github.com/dch2333/dch2333.github.io.git/2020/03/18/遗传算法解决TSP问题/</a>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/18/遗传算法解决TSP问题/" title="遗传算法解决TSP问题">https://github.com/dch2333/dch2333.github.io.git/2020/03/18/遗传算法解决TSP问题/</a>
             <span class="copy-path" data-clipboard-text="原文: https://github.com/dch2333/dch2333.github.io.git/2020/03/18/遗传算法解决TSP问题/　　作者: DCH" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
