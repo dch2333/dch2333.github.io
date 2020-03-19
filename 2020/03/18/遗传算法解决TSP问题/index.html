@@ -23,6 +23,7 @@
 <meta property="og:site_name" content="DCH BLOG">
 <meta property="og:description" content="一个学弟问遗传算法来着，我当初高性能做的是粒子群，正好借这个机会了解一下遗传算法">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006ChFzAly1gczlqtixjuj30c50ru74p.jpg">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=p%28x_i%29%3D%5Cfrac%7Bf%28x_i%29%7D%7B%5Csum_%7Bj%3D1%7D%5E%7BN%7Df%28x_j%29%7D">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=q_i%3D%5Csum_%7Bj%3D1%7D%5E%7Bi%7Df%28x_j%29">
 <meta property="og:image" content="https://img-blog.csdn.net/20170116114331390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjc1MDcwMg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
@@ -30,11 +31,11 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20170116114602606?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjc1MDcwMg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ChFzAly1gczl7bgsjhj30rl0efwfa.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006ChFzAly1gczl7o0blhj30rl0efdgf.jpg">
-<meta property="og:updated_time" content="2020-03-19T14:12:55.594Z">
+<meta property="og:updated_time" content="2020-03-19T14:24:35.709Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="遗传算法解决TSP问题">
 <meta name="twitter:description" content="一个学弟问遗传算法来着，我当初高性能做的是粒子群，正好借这个机会了解一下遗传算法">
-<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=p%28x_i%29%3D%5Cfrac%7Bf%28x_i%29%7D%7B%5Csum_%7Bj%3D1%7D%5E%7BN%7Df%28x_j%29%7D">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006ChFzAly1gczlqtixjuj30c50ru74p.jpg">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -202,7 +203,7 @@
                             <li>字数统计：</li>
                             <br/>
                             <li>共有文章<b>12</b>篇</li>
-                            <li>总计<b>20.3k</b>字</li>
+                            <li>总计<b>20.4k</b>字</li>
                         </ul>
                     </nav>
                 </section>
@@ -332,6 +333,10 @@
 <h2 id="1-算法流程"><a href="#1-算法流程" class="headerlink" title="1.算法流程"></a>1.算法流程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">open=&gt;start: 开始</span><br><span class="line">init=&gt;operation: 初始化种群</span><br><span class="line">check=&gt;operation: 计算个体适应度</span><br><span class="line">choose=&gt;operation: 选择</span><br><span class="line">cross=&gt;operation: 遗传</span><br><span class="line">mutate=&gt;operation: 变异</span><br><span class="line">loop=&gt;condition: 满足在终止条件？</span><br><span class="line">end=&gt;end: 结束</span><br><span class="line"></span><br><span class="line">open-&gt;init-&gt;check-&gt;choose-&gt;cross-&gt;mutate-&gt;loop</span><br><span class="line">loop(yes)-&gt;end</span><br><span class="line">loop(no)-&gt;check</span><br></pre></td></tr></table></figure>
 
 <p>这大概就是我理解的算法流程（markdown写流程图也挺方便</p>
+<p>—补充—</p>
+<p>md我这个网页的mathjax不知道为啥渲染不了流程图，只能截图放上来了==</p>
+<p>另外上面是流程图源码==</p>
+<p><img src="http://ww1.sinaimg.cn/large/006ChFzAly1gczlqtixjuj30c50ru74p.jpg" alt="QQ图片20200319222335.png"></p>
 <h2 id="2-算法内容"><a href="#2-算法内容" class="headerlink" title="2.算法内容"></a>2.算法内容</h2><h3 id="2-1-一些常量"><a href="#2-1-一些常量" class="headerlink" title="2.1 一些常量"></a>2.1 一些常量</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> T 300  <span class="comment">// 最大进化代数</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> p_cross 0.9 <span class="comment">// 交叉概率</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> p_vary 0.1 <span class="comment">// 变异概率</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1000  <span class="comment">//个体数</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> n 31 <span class="comment">// 染色体长度(这里即为城市个数)</span></span></span><br></pre></td></tr></table></figure>
 
 <h3 id="2-2-初始化种群"><a href="#2-2-初始化种群" class="headerlink" title="2.2 初始化种群"></a>2.2 初始化种群</h3><p>因为要解决TSP问题，所以个体的基因就用一个数组来存储，记录先后途径的城市</p>
@@ -407,7 +412,7 @@
         <p><span>本文标题:</span><a href="/2020/03/18/遗传算法解决TSP问题/">遗传算法解决TSP问题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">DCH</a></p>
         <p><span>发布时间:</span>2020-03-18, 20:37:10</p>
-        <p><span>最后更新:</span>2020-03-19, 22:12:55</p>
+        <p><span>最后更新:</span>2020-03-19, 22:24:35</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/03/18/遗传算法解决TSP问题/" title="遗传算法解决TSP问题">https://github.com/dch2333/dch2333.github.io.git/2020/03/18/遗传算法解决TSP问题/</a>
             <span class="copy-path" data-clipboard-text="原文: https://github.com/dch2333/dch2333.github.io.git/2020/03/18/遗传算法解决TSP问题/　　作者: DCH" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
